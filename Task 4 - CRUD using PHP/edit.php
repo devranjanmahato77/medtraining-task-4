@@ -3,7 +3,7 @@ include("database.php");
 
 $query = "select * from student_id where dt=1";
 $data = mysqli_query($con,$query);
-$result = mysqli_fetch_assoc($data)
+$result = mysqli_fetch_assoc($data);
 
 
 $sn = $_GET['sn'];
@@ -31,7 +31,7 @@ if(isset($_POST['update'])){
     $res = $_POST['resume'];
 
 
-$value = ["name"=>$nm,"regno"=>$rn,"college"=>$c,"email"=>$e,"branch"=>$b,"mobile"=>$mob,"dob"=>$dt,"address"=$ad,"image"=>$img,"resume"=>$res];
+$value = ["name"=>$nm,"regno"=>$rn,"college"=>$c,"email"=>$e,"branch"=>$b,"mobile"=>$mob,"dob"=>$dt,"address"=>$ad,"image"=>$img,"resume"=>$res];
 
 
 
