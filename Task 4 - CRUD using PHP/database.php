@@ -12,12 +12,15 @@ class database{
 
     public function __construct(){
         if(!$this->con){
-            $this->mysqli = new mysqli($this->db_host,$this->db_user,$this->db_user,$this->db_pass);
+            $this->mysqli = new mysqli($this->db_host,$this->db_user,$this->db_pass,$this->db_name);
             $this->con=true;
             if($this->mysqli->connect_error){
                 array_push($this->result, $this->mysqli->connect_error);
                 return false;
             }
+        }
+        else{
+            echo "connected";
         }
     }
 
@@ -44,7 +47,7 @@ class database{
 
     }
 
-    public function update($table, $params=arr(),$where=null){
+    public function update($table, $params=array(),$where=null){
         if($this->tableExists($table)){
             $args = array();
             foreach($params as $key => $value){
