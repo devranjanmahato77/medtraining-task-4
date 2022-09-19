@@ -109,7 +109,7 @@ if(isset($_POST['submit'])){
         $image = $_POST['image'];
         $resume = $_POST['resume'];
 
-        $value = ["name"=>$fullname,"regno"=>$regno,"college"=>$college,"email"=>$email,"branch"=>$branch,"mobile"=>$mobile,"dob"=>$dob,"address"=$address,"image"=>$image,"resume"=>$resume];
+        $value = ['name'=>'$fullname','regno'=>'$regno','college'=>'$college','email'=>'$email','branch'=>'$branch','mobile'=>'$mobile','dob'=>'$dob','address'=>'$address','image'=>'$image','resume'=>'$resume'];
 
         if($obj->insert("student_id",$value)){
             echo "<h2>Data Inserted Successfully.</h2>";
